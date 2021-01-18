@@ -11,7 +11,7 @@ import RxCocoa
 
 final class LanguageSelectionViewController: UIViewController {
     
-    @IBOutlet private weak var pickerView: LanguagePickerView!
+    @IBOutlet private weak var pickerView: UIPickerView!
     @IBOutlet private weak var cancelButton: UIButton!
     @IBOutlet private weak var confirmButton: UIButton!
     

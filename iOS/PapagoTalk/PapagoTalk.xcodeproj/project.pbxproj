@@ -114,7 +114,6 @@
 		99E9BDEC2589F1EC006EEFEA /* ImageFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 996A1432256D040B00F21215 /* ImageFactory.swift */; };
 		99E9BDF02589F26D006EEFEA /* MockUserDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB987E86257F4CD100F4C258 /* MockUserDataProvider.swift */; };
 		99E9BDF52589F2A9006EEFEA /* MockReceiver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99E9BDF42589F2A9006EEFEA /* MockReceiver.swift */; };
-		99E9BE09258AF7E3006EEFEA /* LanguagePickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99E9BE08258AF7E3006EEFEA /* LanguagePickerView.swift */; };
 		99E9BE13258B7B95006EEFEA /* MessageHeightCalculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9968473B25847AB2006C116E /* MessageHeightCalculator.swift */; };
 		99E9BE2B258B7C45006EEFEA /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB23C09A2576979C001D74A0 /* NetworkError.swift */; };
 		99E9BE2F258B7D12006EEFEA /* HomeReactorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB0B6EA5257EB307005EDF22 /* HomeReactorTests.swift */; };
@@ -324,7 +323,6 @@
 		99E9BD7A2589EAE5006EEFEA /* MockUserData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockUserData.swift; sourceTree = "<group>"; };
 		99E9BD7F2589EB18006EEFEA /* MockMessageFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockMessageFactory.swift; sourceTree = "<group>"; };
 		99E9BDF42589F2A9006EEFEA /* MockReceiver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockReceiver.swift; sourceTree = "<group>"; };
-		99E9BE08258AF7E3006EEFEA /* LanguagePickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanguagePickerView.swift; sourceTree = "<group>"; };
 		AF3D2492C0C0C5E605FF6FBF /* Pods_PapagoTalk.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PapagoTalk.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BB0B6EA5257EB307005EDF22 /* HomeReactorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeReactorTests.swift; sourceTree = "<group>"; };
 		BB0B6EEB257F3681005EDF22 /* MockNetworkServiceSuccess.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockNetworkServiceSuccess.swift; sourceTree = "<group>"; };
@@ -497,7 +495,6 @@
 			isa = PBXGroup;
 			children = (
 				99482EE5257E537700802B45 /* RoundShadowButton.swift */,
-				99E9BE08258AF7E3006EEFEA /* LanguagePickerView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1319,7 +1316,6 @@
 				BB7AB0152577B49400D9EDF7 /* SpeechService.swift in Sources */,
 				995BE9D525762AC500C15AC7 /* UserDataProviding.swift in Sources */,
 				99482EE6257E537700802B45 /* RoundShadowButton.swift in Sources */,
-				99E9BE09258AF7E3006EEFEA /* LanguagePickerView.swift in Sources */,
 				BB15A5872577690F0006D258 /* SpeechViewController.swift in Sources */,
 				996A145D256D324600F21215 /* LanguageSelectionViewController.swift in Sources */,
 				995BE99F2575DF9400C15AC7 /* Coordinator.swift in Sources */,
