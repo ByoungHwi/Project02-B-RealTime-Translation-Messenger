@@ -18,7 +18,7 @@ struct Message: Codable {
     var isTranslated: Bool = false
     var isFirstOfDay: Bool = true
     var shouldTimeShow: Bool = true
-    var shouldImageShow: Bool = true
+    var shouldImageShow: Bool = false
     
     var time: Date {
         return timeStamp.toDate()
