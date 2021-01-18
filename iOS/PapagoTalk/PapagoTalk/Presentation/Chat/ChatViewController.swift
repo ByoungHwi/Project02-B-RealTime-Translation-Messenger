@@ -115,11 +115,6 @@ final class ChatViewController: UIViewController, StoryboardView {
             .bind(to: chatCollectionView.rx.items(dataSource: messageDataSource))
             .disposed(by: disposeBag)
         
-        reactor.state.map { $0.sendResult }
-            .asObservable()
-            .subscribe()
-            .disposed(by: disposeBag)
-        
         reactor.state.map { $0.presentDrawer }
             .distinctUntilChanged()
             .subscribe(onNext: { [weak self] in
