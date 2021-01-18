@@ -32,10 +32,6 @@ final class SettingViewController: UIViewController, StoryboardView {
     override func viewDidLoad() {
         super.viewDidLoad()
         initailizeSizeSettingSegmentedControl()
-    }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
         initailizeMicButton(by: .none)
     }
         

@@ -11,6 +11,13 @@ final class MessageBox {
     
     var messages = [Message]()
     
+    var lastMessageTimeStamp: String {
+        guard let lastMessage = messages.last else {
+            return Date.presentTimeStamp()
+        }
+        return lastMessage.timeStamp
+    }
+    
     func append(_ messages: [Message]) {
         messages.forEach { append($0) }
     }
@@ -19,6 +26,7 @@ final class MessageBox {
         var message = message
         
         guard let lastMessage = messages.last else {
+            message.shouldImageShow = message.type == .receivedOrigin ? true : false
             messages.append(message)
             return
         }
@@ -33,13 +41,6 @@ final class MessageBox {
         messages.append(message)
     }
     
-    func lastMessageTimeStamp() -> String {
-        guard let lastMessage = messages.last else {
-            return Date.presentTimeStamp()
-        }
-        return lastMessage.timeStamp
-    }
-    
     private func isAppropriateMessage(of newMessage: Message, comparedBy lastMessage: Message) -> Bool {
         lastMessage.time <= newMessage.time
     }
@@ -52,13 +53,17 @@ final class MessageBox {
     }
     
     private func setShouldImageShow(of newMessage: Message, comparedBy lastMessage: Message) -> Message {
-        guard isSuccessiveReceive(of: newMessage, comparedBy: lastMessage),
-              isSameTime(of: newMessage, comparedBy: lastMessage)
-        else {
+        guard newMessage.type == .receivedOrigin else {
             return newMessage
         }
         var message = newMessage
-        message.shouldImageShow = false
+        
+        if lastMessage.type != .receivedOrigin {
+            message.shouldImageShow = true
+            return message
+        }
+        
+        message.shouldImageShow = !isSameTime(of: newMessage, comparedBy: lastMessage)
         return message
     }
     
@@ -71,11 +76,6 @@ final class MessageBox {
         var lastMessage = messages.removeLast()
         lastMessage.shouldTimeShow = false
         messages.append(lastMessage)
-    }
-    
-    private func isSuccessiveReceive(of newMessage: Message, comparedBy lastMessage: Message) -> Bool {
-        isSameMessageType(of: newMessage, comparedBy: lastMessage, type: .receivedOrigin)
-            && isSameSender(of: newMessage, comparedBy: lastMessage)
     }
     
     private func isSameMessageType(of newMessage: Message, comparedBy lastMessage: Message, type: MessageType) -> Bool {

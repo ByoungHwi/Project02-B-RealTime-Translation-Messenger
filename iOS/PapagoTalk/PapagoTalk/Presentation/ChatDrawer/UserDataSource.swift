@@ -8,7 +8,7 @@
 import Foundation
 import RxDataSources
 
-class UserDataSource: RxCollectionViewSectionedReloadDataSource<UserSection> {
+final class UserDataSource: RxCollectionViewSectionedReloadDataSource<UserSection> {
     
     init() {
         super.init(configureCell: { _, collectionView, indexPath, item in

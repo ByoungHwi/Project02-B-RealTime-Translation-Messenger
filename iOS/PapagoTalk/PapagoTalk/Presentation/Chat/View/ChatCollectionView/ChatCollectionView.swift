@@ -10,7 +10,7 @@ import UIKit
 final class ChatCollectionView: UICollectionView {
     
     func scrollToLast() {
-        superview?.layoutIfNeeded()
+        layoutIfNeeded()
         let newY = contentSize.height - bounds.height
         setContentOffset(CGPoint(x: .zero, y: newY < .zero ? .zero : newY), animated: false)
     }
@@ -28,7 +28,7 @@ final class ChatCollectionView: UICollectionView {
         yOffSet = yOffSet > maxYOffSet ? maxYOffSet : yOffSet
         offset.y += yOffSet
         setContentOffset(offset, animated: false)
-        superview.layoutIfNeeded()
+        layoutIfNeeded()
     }
     
     func keyboardWillHide(keyboardHeight: CGFloat) {
@@ -40,6 +40,6 @@ final class ChatCollectionView: UICollectionView {
         offset.y -= yOffSet
         offset.y = offset.y < .zero ? .zero : offset.y
         setContentOffset(offset, animated: false)
-        superview.layoutIfNeeded()
+        layoutIfNeeded()
     }
 }

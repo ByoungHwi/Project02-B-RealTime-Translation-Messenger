@@ -26,7 +26,7 @@ struct MessageParser: MessageParseProviding {
         var messages = [Message]()
         
         var originMessage = Message(data: newMessage, with: translatedResult, timeStamp: timeStamp)
-        originMessage = setMessageType(of: originMessage)
+        originMessage.setType(by: userData.id)
         messages.append(originMessage)
         
         guard shouldTranslate(message: newMessage) else {
@@ -34,7 +34,7 @@ struct MessageParser: MessageParseProviding {
         }
         
         var translatedMessage = Message(data: newMessage, with: translatedResult, timeStamp: timeStamp, isTranslated: true)
-        translatedMessage = setMessageType(of: translatedMessage)
+        translatedMessage.setType(by: userData.id)
         
         guard !translatedMessage.text.isEmpty else {
             return messages
@@ -79,11 +79,5 @@ struct MessageParser: MessageParseProviding {
         default:
             return Message(systemText: "", timeStamp: message.createdAt ?? "")
         }
-    }
-    
-    private func setMessageType(of message: Message) -> Message {
-        var message = message
-        message.setType(by: userData.id)
-        return message
     }
 }
