@@ -24,7 +24,6 @@ final class MicrophoneButton: RoundShadowButton {
             frame.size = newSize
             bounds.size = newSize
             updateShadow()
-            layoutSubviews()
             setNeedsDisplay()
             setImage(image, for: .normal)
         }
