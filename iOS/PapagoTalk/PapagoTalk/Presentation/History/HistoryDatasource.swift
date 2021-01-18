@@ -8,7 +8,7 @@
 import Foundation
 import RxDataSources
 
-class HistoryDatasource: RxTableViewSectionedReloadDataSource<HistorySection> {
+final class HistoryDatasource: RxTableViewSectionedReloadDataSource<HistorySection> {
     
     init() {
         super.init(configureCell: { _, tableview, indexPath, item in
